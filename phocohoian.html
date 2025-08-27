@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phố cổ Hội An – Trang web con</title>
+  <meta name="description" content="Giới thiệu Phố cổ Hội An: lịch sử, điểm nổi bật, kinh nghiệm tham quan và bản đồ." />
+  <style>
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --panel: #111827; /* gray-900 */
+      --muted: #94a3b8; /* slate-400 */
+      --text: #e5e7eb; /* gray-200 */
+      --brand: #f59e0b; /* amber-500 */
+      --accent: #22d3ee; /* cyan-400 */
+      --ring: rgba(245, 158, 11, .25);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #0b1220, #0f172a 30%); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; padding: 24px; margin: 0 auto; }
+    header { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(15, 23, 42, .6); border-bottom: 1px solid rgba(148, 163, 184, .15); z-index: 10; }
+    .breadcrumbs { font-size: 14px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs span { opacity: .7; }
+    .title { display: grid; gap: 8px; padding-top: 8px; padding-bottom: 8px; }
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0; line-height: 1.15; }
+    .subtitle { color: var(--muted); font-size: 16px; }
+
+    .hero { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); border: 1px solid rgba(148, 163, 184, .15); }
+    .hero img { width: 100%; height: 360px; object-fit: cover; display: block; }
+    .hero .badge { position: absolute; top: 16px; left: 16px; background: rgba(17, 24, 39, .75); color: #fff; padding: 6px 10px; border-radius: 999px; font-size: 13px; border: 1px solid rgba(255,255,255,.12); }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: 1fr; margin-top: 20px; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 2fr 1fr; } }
+
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border: 1px solid rgba(148,163,184,.15); border-radius: 18px; padding: 18px; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+    .card h2 { margin-top: 0; font-size: 22px; }
+    .muted { color: var(--muted); }
+
+    .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    @media (min-width: 640px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+    .fact { background: rgba(17, 24, 39, .6); border: 1px dashed rgba(245, 158, 11, .35); border-radius: 14px; padding: 12px; }
+    .fact b { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+
+    .highlights { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 700px) { .highlights { grid-template-columns: repeat(2, 1fr); } }
+    .highlight { padding: 12px; border: 1px solid rgba(148,163,184,.15); border-radius: 14px; background: rgba(17, 24, 39, .5); }
+
+    .timeline { border-left: 2px solid rgba(245, 158, 11, .35); padding-left: 14px; display: grid; gap: 10px; }
+    .timeline .item { position: relative; }
+    .timeline .item::before { content: ""; position: absolute; left: -22px; top: .25em; width: 10px; height: 10px; border-radius: 999px; background: var(--brand); box-shadow: 0 0 0 3px var(--ring); }
+
+    .tips { display: grid; gap: 10px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    @media (min-width: 700px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+    .gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(148,163,184,.18); }
+
+    .map { border: 0; width: 100%; height: 300px; border-radius: 14px; box-shadow: inset 0 0 0 1px rgba(148,163,184,.15); }
+
+    footer { margin-top: 28px; padding: 18px 0 30px; color: var(--muted); border-top: 1px solid rgba(148,163,184,.15); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(148,163,184,.25); background: rgba(17,24,39,.6); color: var(--text); }
+    .btn:hover { filter: brightness(1.1); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Trang chủ</a>
+        <span>›</span>
+        <a href="../ditich.html">Di tích lịch sử</a>
+        <span>›</span>
+        <span aria-current="page">Phố cổ Hội An</span>
+      </nav>
+      <div class="title">
+        <h1>Phố cổ Hội An</h1>
+        <p class="subtitle">Di sản văn hóa thế giới – bức tranh đô thị cảng thị Đông Nam Á thế kỷ XVI–XVIII còn được bảo tồn gần như nguyên vẹn.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Ảnh nổi bật Phố cổ Hội An">
+      <img src="https://kyuchoian.com/userfiles/image/tour/hoi-an/2020/bo-anh-dep-hoi-an/pho-co/tren-cao/hoi-an-tren-cao-1.jpg" alt="Phố cổ Hội An nhìn bên sông Hoài với đèn lồng rực rỡ" />
+      <span class="badge">UNESCO (1999)</span>
+    </section>
+
+    <div class="grid">
+      <article class="card" id="tong-quan">
+        <h2>Tổng quan</h2>
+        <p>
+          Nằm bên sông Thu Bồn (tỉnh Quảng Nam), Phố cổ Hội An từng là thương cảng quốc tế sầm uất, nơi giao thoa văn hóa Việt – Hoa – Nhật – Ấn – Âu. 
+          Hệ thống nhà gỗ, hội quán, chùa cầu, giếng cổ và mạng lưới phố phường cắt ngang hình ô bàn cờ tạo nên bản sắc đô thị cổ đặc biệt.
+        </p>
+        <div class="facts" role="list">
+          <div class="fact" role="listitem"><b>Vị trí</b>Hội An, Quảng Nam</div>
+          <div class="fact" role="listitem"><b>Thời hoàng kim</b>TK XVI–XVIII</div>
+          <div class="fact" role="listitem"><b>Công nhận</b>UNESCO 4/12/1999</div>
+          <div class="fact" role="listitem"><b>Thời gian đẹp</b>Chiều–tối, đêm rằm</div>
+        </div>
+
+        <h3 id="diem-noi-bat" style="margin-top:18px">Điểm nổi bật</h3>
+        <div class="highlights">
+          <div class="highlight"><strong>Chùa Cầu</strong> – biểu tượng của Hội An, do cộng đồng người Nhật xây dựng vào đầu TK XVII.</div>
+          <div class="highlight"><strong>Nhà cổ Tấn Ký</strong> – kết hợp kiến trúc Việt–Nhật–Hoa, không gian buôn bán ven sông.</div>
+          <div class="highlight"><strong>Hội quán Phúc Kiến</strong> – trung tâm sinh hoạt cộng đồng người Hoa, nhiều miếu thờ trang trí công phu.</div>
+          <div class="highlight"><strong>Sông Hoài & đèn lồng</strong> – dạo thuyền, thả hoa đăng, check-in về đêm lung linh.</div>
+        </div>
+
+        <h3 style="margin-top:18px">Lịch sử & bảo tồn</h3>
+        <div class="timeline">
+          <div class="item"><strong>TK XVI–XVIII:</strong> Thương cảng quốc tế phát triển; giao thương tơ lụa, gốm sứ, gia vị.</div>
+          <div class="item"><strong>Cuối TK XVIII:</strong> Cửa biển Cửa Đại bồi lấp, vai trò thương cảng suy giảm.</div>
+          <div class="item"><strong>TK XX:</strong> Đô thị hiện đại né tránh chiến tranh lớn, nhiều kiến trúc còn nguyên vẹn.</div>
+          <div class="item"><strong>1999:</strong> Được UNESCO ghi danh Di sản văn hóa thế giới.</div>
+        </div>
+      </article>
+
+      <aside class="card" aria-label="Thông tin nhanh & kinh nghiệm">
+        <h2>Kinh nghiệm tham quan</h2>
+        <ul class="tips">
+          <li>Mua <em>vé tham quan phố cổ</em> để vào các điểm di tích: nhà cổ, hội quán, chùa Cầu (khi mở cửa).</li>
+          <li>Đi bộ hoặc đạp xe trong khu phố; giữ yên tĩnh, tôn trọng đời sống cư dân.</li>
+          <li>Tránh xả rác, hạn chế dùng đèn flash trong không gian gỗ cổ.</li>
+          <li>Mùa khô (02–08) thuận lợi; mùa mưa (09–01) đề phòng ngập.</li>
+        </ul>
+
+        <h3 style="margin-top:14px">Liên hệ hữu ích</h3>
+        <p class="muted">Trung tâm Thông tin Du lịch Hội An • Tổng đài du lịch Quảng Nam • Trang thông tin của UBND TP Hội An.</p>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:18px" aria-label="Bản đồ Phố cổ Hội An">
+      <h2>Bản đồ</h2>
+      <iframe class="map" loading="lazy" allowfullscreen 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62630.23100352322!2d108.292!3d15.880!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421089d6b2b2b7%3A0x8a2d7d0a2b6a6f4!2zUGjhu5UgY8OzIEjhu5lpIEFu!5e0!3m2!1svi!2sVN!4v1700000000000">
+      </iframe>
+    </section>
+
+    <section class="card" style="margin-top:18px" aria-label="Thư viện ảnh Hội An">
+      <h2>Thư viện ảnh</h2>
+      <div class="gallery">
+        <img src="images/hoi-an-1.jpg" alt="Chùa Cầu Hội An" />
+        <img src="images/hoi-an-2.jpg" alt="Hội quán Phúc Kiến" />
+        <img src="images/hoi-an-3.jpg" alt="Nhà cổ Tấn Ký" />
+        <img src="images/hoi-an-4.jpg" alt="Đèn lồng trên phố đêm" />
+      </div>
+    </section>
+
+    <footer class="container">
+      <div class="actions">
+        <a class="btn" href="../ditich.html">← Quay về danh sách di tích</a>
+        <a class="btn" href="#tong-quan">Lên đầu trang ↑</a>
+      </div>
+      <p class="muted" style="margin-top:10px">© 2025 Trang giới thiệu di tích Việt Nam • Trang con: Phố cổ Hội An</p>
+    </footer>
+  </main>
+</body>
+</html>
