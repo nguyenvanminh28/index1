@@ -1,0 +1,109 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đăng Nhập</title>
+    <style>
+        /* Đặt kiểu cho body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Thiết lập phần container đăng nhập */
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Cải thiện hình thức của các input */
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button.btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button.btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        
+        <!-- Form Đăng Nhập -->
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Tài Khoản:</label>
+                <input type="text" id="username" name="username" required placeholder="Nhập tên tài khoản">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mật Khẩu:</label>
+                <input type="password" id="password" name="password" required placeholder="Nhập mật khẩu">
+            </div>
+
+            <button type="submit" class="btn">Đăng Nhập</button>
+        </form>
+        
+        <p id="error-message" style="color:red;"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Ngăn form tự động gửi đi
+
+            // Lấy giá trị tài khoản và mật khẩu từ form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Kiểm tra tài khoản và mật khẩu (Giả sử tài khoản: admin, mật khẩu: 132009)
+            if (username === 'admin' && password === '132009') {
+                // Nếu đăng nhập thành công, chuyển hướng đến trang ditichlichsuvietnam.html
+                window.location.href = 'ditichlichsuvietnam.html';
+            } else {
+                // Nếu đăng nhập thất bại, hiển thị thông báo lỗi
+                document.getElementById('error-message').innerText = 'Tài khoản hoặc mật khẩu không chính xác.';
+            }
+        });
+    </script>
+
+</body>
+</html>
