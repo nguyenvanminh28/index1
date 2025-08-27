@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chiến trường Điện Biên Phủ</title>
+  <meta name="description" content="Giới thiệu Chiến trường Điện Biên Phủ: lịch sử, điểm tham quan, thông tin hữu ích cho du khách." />
+  <style>
+    :root{
+      --bg:#0f172a;        /* nền xanh đậm */
+      --card:#111827;      /* thẻ */
+      --text:#e5e7eb;      /* chữ */
+      --muted:#9ca3af;     /* chữ phụ */
+      --accent:#f59e0b;    /* nhấn */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6; color:var(--text); background:linear-gradient(180deg,#0b1220, var(--bg));
+    }
+    header, main, footer{max-width:980px; margin:auto; padding:16px}
+    header{
+      padding-top:28px; padding-bottom:12px;
+    }
+    .crumbs a{ color:var(--muted); text-decoration:none }
+    .crumbs a:hover{ text-decoration:underline }
+    h1{ margin:10px 0 6px; font-size:clamp(24px, 5vw, 40px)}
+    .tagline{ color:var(--muted) }
+    .card{
+      background:linear-gradient(180deg, #111827, #0f172a);
+      border:1px solid #1f2937; border-radius:16px; padding:16px; margin:16px 0;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+    }
+    .grid{ display:grid; gap:16px }
+    @media (min-width: 760px){ .grid-cols-2{ grid-template-columns:1fr 1fr } }
+    img, iframe{ width:100%; border:0; border-radius:14px }
+    .meta{ display:flex; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:14px }
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:999px;
+      background:var(--accent); color:#111; font-weight:600; text-decoration:none
+    }
+    ul{ padding-left:18px }
+    footer{ color:var(--muted); font-size:14px; padding-bottom:40px }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="crumbs">
+      <a href="index.html">Trang chủ</a> › <span>Chiến trường Điện Biên Phủ</span>
+    </nav>
+    <h1>Chiến trường Điện Biên Phủ</h1>
+    <p class="tagline">Biểu tượng của ý chí độc lập dân tộc và mốc son lịch sử năm 1954.</p>
+    <div class="meta">
+      <span>📍 TP. Điện Biên Phủ, tỉnh Điện Biên</span>
+      <span>🕰️ Gắn với Chiến dịch Điện Biên Phủ (13/3 – 7/5/1954)</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card grid grid-cols-2">
+      <div>
+        <h2>Tổng quan</h2>
+        <p>
+          Chiến trường Điện Biên Phủ là cụm di tích lịch sử quốc gia đặc biệt,
+          nơi diễn ra <strong>trận quyết chiến chiến lược</strong> giữa Quân đội Nhân dân Việt Nam
+          và quân đội Pháp, kết thúc bằng chiến thắng ngày <strong>07/5/1954</strong>, góp phần
+          ký kết Hiệp định Genève, chấm dứt chiến tranh ở Đông Dương.
+        </p>
+        <a class="btn" href="#tham-quan">Xem điểm tham quan</a>
+      </div>
+      <div>
+        <!-- Thay ảnh bên dưới bằng ảnh của bạn -->
+        <img src="images/dien-bien-phu.jpg" alt="Toàn cảnh Chiến trường Điện Biên Phủ">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Dấu mốc lịch sử chính</h2>
+      <ul>
+        <li><strong>13/3/1954:</strong> Nổ súng mở màn, tấn công Him Lam.</li>
+        <li><strong>30/3–4/4/1954:</strong> Đợt 2, đánh chiếm các cứ điểm phía Đông (C1, D1, E1...).</li>
+        <li><strong>01–07/5/1954:</strong> Đợt 3, tổng công kích; chiều 7/5 địch ở Mường Thanh đầu hàng.</li>
+      </ul>
+    </section>
+
+    <section id="tham-quan" class="card grid grid-cols-2">
+      <div>
+        <h2>Điểm tham quan nổi bật</h2>
+        <ul>
+          <li><strong>Đồi A1 (Éliane 2):</strong> vị trí then chốt, quyết định cục diện chiến dịch.</li>
+          <li><strong>Hầm Đờ Cát (De Castries):</strong> sở chỉ huy tập đoàn cứ điểm Điện Biên Phủ.</li>
+          <li><strong>Đồi C1, D1, E1:</strong> hệ thống điểm cao phòng thủ phía Đông.</li>
+          <li><strong>Đồi Him Lam:</strong> nơi mở màn chiến dịch.</li>
+          <li><strong>Bảo tàng Chiến thắng Điện Biên Phủ:</strong> trưng bày hiện vật, sa bàn điện tử.</li>
+        </ul>
+      </div>
+      <div>
+        <!-- Thay ảnh/ảnh động minh hoạ -->
+        <img src="images/doi-a1.jpg" alt="Đồi A1 - Điện Biên Phủ">
+      </div>
+    </section>
+
+    <section class="card grid grid-cols-2">
+      <div>
+        <h2>Thông tin hữu ích</h2>
+        <ul>
+          <li><strong>Thời điểm nên đi:</strong> Tháng 3–5 (khô ráo, nhiều hoạt động kỷ niệm).</li>
+          <li><strong>Di chuyển:</strong> Máy bay tới Điện Biên; hoặc đường bộ từ Hà Nội (qua Sơn La).</li>
+          <li><strong>Thời gian tham quan:</strong> 1–2 ngày cho các điểm chính.</li>
+          <li><strong>Lưu ý:</strong> Tôn trọng không gian di tích, giữ gìn vệ sinh, không leo trèo lên hầm hào.</li>
+        </ul>
+      </div>
+      <div>
+        <!-- Nhúng bản đồ: có thể thay bằng iframe Google Maps của bạn -->
+        <iframe
+          title="Bản đồ Điện Biên Phủ"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=103.008%2C21.371%2C103.050%2C21.408&layer=mapnik"
+          style="height: 260px;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tài nguyên thêm</h2>
+      <p>
+        Bạn có thể bổ sung video tư liệu, hình ảnh trước–sau, hoặc tuyến tham quan theo thời gian để trang hấp dẫn hơn.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Trang giới thiệu Chiến trường Điện Biên Phủ • <a href="index.html" class="crumbs">Quay về trang chủ</a></p>
+  </footer>
+
+  <script>
+    // Hiển thị năm hiện tại
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
